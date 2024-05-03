@@ -1,0 +1,52 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+	<h1 style="padding:10px 0px">Edit Employee Detail</h1>
+	<div>
+		<form method="post" class="form form-floating" action="/Employee/SaveEdit/@Model.EmployeeID">
+			<div>
+				<label>Employee Id</label>
+				<input type="text" value="@Model.EmployeeID" name="EmployeeID" id="EmployeeID" />
+			</div>
+			<div>
+				<label>Employee Name</label>
+				<input type="text" value="@Model.EmpName" name="EmpName" id="EmpName" />
+			</div>
+			<div>
+				<label>Employee Title</label>
+				<input type="text" value="@Model.EmpTitle" name="EmpTitle" id="EmpTitle" />
+			</div>
+			<div>
+				<label>Employee Address</label>
+				<input type="text" value="@Model.Address" name="Address" id="Address" />
+			</div>
+			<div>
+				<label>Employee Phone</label>
+				<input type="text" value="@Model.EmpPhone" name="EmpPhone" id="EmpPhone" />
+			</div>
+			<div>
+				<label>Employee Salary</label>
+				<input type="text" value="@Model.EmpSalary" name="EmpSalary" id="EmpSalary" />
+			</div>
+			<input type="submit" value="Edit" />
+			@Html.ActionLink("Back To List","Index");
+		</form>
+	</div>
+</body>
+</html>
+
+<style>
+	label {
+		padding-right: 15px;
+	}
+
+	form div {
+		padding: 10px 0;
+	}
+</style>
+

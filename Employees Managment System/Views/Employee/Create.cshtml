@@ -1,0 +1,50 @@
+﻿@model Employee
+@{
+	ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+	<h1 style="padding:10px 0px">Create Employee</h1>
+	<div>
+		<form method="post"  class="form form-floating">
+			<div>
+				<label>Employee Id</label>
+				<input type="text" name="EmployeeID" id="EmployeeID" required />
+			</div>
+			<div>
+				<label>Employee Name</label>
+				<input type="text" name="EmpName" id="EmpName" required />
+			</div>
+			<div>
+				<label>Employee Title</label>
+				<input type="text" name="EmpTitle" id="EmpTitle" required />
+			</div>
+			<div>
+				<label>Employee Address</label>
+				<input type="text" name="Address" id="Address" required />
+			</div>
+			<div>
+				<label>Employee Phone</label>
+				<input type="text" name="EmpPhone" id="EmpPhone" required />
+			</div>
+			<div>
+				<label>Employee Salary</label>
+				<input type="text" name="EmpSalary" id="EmpSalary" required />
+			</div>
+			<input type="submit" value="Create" />
+			@Html.ActionLink("Back To List","Index");
+		</form>
+	</div>
+</body>
+</html>
+
+<style>
+	label{
+		padding-right: 15px;
+	}
+	form div{
+		padding:10px 0;
+	}
+</style>

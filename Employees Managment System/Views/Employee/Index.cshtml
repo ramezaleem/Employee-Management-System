@@ -1,0 +1,51 @@
+﻿@model List<Employee>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Info.</title>
+</head>
+
+<body>
+	<div style="margin-bottom:10px">
+		<h1>Employee Information</h1>
+		<a href="/Employee/Create" style="padding-bottom:10px">Create New Employee</a>
+	</div>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Employee ID</th>
+				<th>Employee Name</th>
+				<th>Employee Title</th>
+				<th>Employee Address</th>
+				<th>Employee Phone</th>
+				<th>Employee Salary</th>
+			</tr>
+		</thead>
+		@foreach (var emp in Model)
+		{
+			<text>
+			<tr>
+				<td>@emp.EmployeeID</td>
+				<td>@emp.EmpName</td>
+				<td>@emp.EmpTitle</td>
+				<td>@emp.Address</td>
+				<td>@emp.EmpPhone</td>
+				<td>@emp.EmpSalary</td>
+				<td>
+					<a href="/Employee/Edit/@emp.EmployeeID">Edit</a>
+					<a href="/Employee/Delete/@emp.EmployeeID">Delete</a>
+					<a href="/Employee/Details/@emp.EmployeeID">Details</a>
+				</td>
+			</tr>
+			</text>
+		}
+	</table>
+	<a href="/Employee/DeleteAll">Remove All Employees</a>
+</body>
+</html>
+
